@@ -4,10 +4,10 @@ import responses as r
 
 def start(update, context):
     user_name = update.message.from_user
-    update.message.reply_text('Yo {} 👊 \n\nWelcome ta 𝖎𝖘𝖎𝖙𝖉𝖔𝖜𝖓 𝕭𝖔𝖙 🤖\n/help fo" help'.format(user_name['username']))
+    update.message.reply_text('Hey! {}  This Bot Help You To Check The Status Of Websites, Check /help For Input Syntax'.format(user_name['username']))
 
 def help(update, context):
-    update.message.reply_text('Type da website name. Eg: google.𝘤𝘰𝘮')
+    update.message.reply_text('Type Your Website Name Like example.com')
 
 
 def handle_message(update, context):
