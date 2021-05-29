@@ -8,7 +8,7 @@ def sitestatus_responses(input_text):
     req = Request(user_message)
 
     try:
-        response = urlopen(req)
+        responseHost = urlopen(req)
     except HTTPError as e:
         return ("The server couldn\'t ful-fill the request and the Website is not available at this moment ☹️"+ ' ' +"Error Code:"+ ' ' +str(e.code))
     except URLError as e:
