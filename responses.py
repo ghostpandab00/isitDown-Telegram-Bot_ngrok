@@ -1,7 +1,7 @@
 from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
 import subprocess
-from pythonping import ping
+import pythonping
 
 def sitestatus_responses(input_text):
     user_message = str("https://"+input_text).lower()
