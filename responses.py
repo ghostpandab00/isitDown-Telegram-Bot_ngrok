@@ -1,7 +1,6 @@
 from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
 import subprocess
-#from pythonping import ping
 
 def sitestatus_responses(input_text):
     user_message = str("https://"+input_text).lower()
@@ -19,7 +18,7 @@ def sitestatus_responses(input_text):
 def ipstatus_chceck(input_text):
     address = input_text
     responseIP = subprocess.call(['ping -c 3', address])
-    #responseIP = ping(address, size=40, count=3)
+    
     if responseIP == 0:
         return "The Server Is UP And Responding 🥳"
     elif responseIP == 2:
