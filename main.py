@@ -31,7 +31,7 @@ def textcheck(update, context):
 def handle_messagehost(update, context):
     user_text = str(update.message.text)
     text = str(user_text).lower()
-    responseHost = r.sitestatus_responses(text)
+    response = r.sitestatus_responses(text)
     update.message.reply_text(response)
 
 def handle_messageip(update, context):
