@@ -17,7 +17,7 @@ def sitestatus_responses(input_text):
 
 def ipstatus_chceck(input_text):
     address = input_text
-    responseIP = subprocess.call(['ping', '-c', '3', address])
+    responseIP = subprocess.call(['ping -c 3', address])
 
     if responseIP == 0:
         return "The Server Is UP And Responding 🥳"
