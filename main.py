@@ -4,6 +4,7 @@ import telegram
 from telegram.ext import *
 import constants as keys
 import responses as r
+import pythonping
 
 global bot
 bot = telegram.Bot(token=keys.API_KEY)
