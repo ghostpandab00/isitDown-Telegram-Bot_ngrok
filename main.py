@@ -1,15 +1,13 @@
 import os
-import re
 import telegram
 from telegram.ext import *
 import constants as keys
 import responses as r
 
-
 global bot
 bot = telegram.Bot(token=keys.API_KEY)
 
-PORT = int(os.environ.get('PORT', 8443))
+PORT = int(os.environ.get('PORT', 9542))
 
 def start(update, context):
     user_name = update.message.from_user
@@ -34,15 +32,12 @@ def handle_messagehost(update, context):
     response = r.sitestatus_responses(text)
     update.message.reply_text(response)
 
+
 def handle_messageip(update, context):
     user_text = update.message.text
     responseIP = r.ipstatus_chceck(user_text)
     update.message.reply_text(responseIP)
-
-def error(update, context):
-    print(f"update {update} caused error {context.error}")
-
-
+    
 def main():
     updater = Updater(keys.API_KEY, use_context=True)
     dp = updater.dispatcher
@@ -54,12 +49,10 @@ def main():
     dp.add_handler(MessageHandler(Filters.text, handle_messagehost))
     dp.add_handler(MessageHandler(Filters.text, handle_messageip))
 
-    dp.add_error_handler(error)
-
-    updater.start_webhook(listen="0.0.0.0",
+    updater.start_webhook(listen="127.0.0.1",
                        port=int(PORT),
                        url_path=keys.API_KEY,
-                       webhook_url='https://isitdown-telegram-bot.herokuapp.com/' + keys.API_KEY)
+                       webhook_url='https://80a4a047318d.ngrok.io/' + keys.API_KEY)
 
     updater.idle()
 
