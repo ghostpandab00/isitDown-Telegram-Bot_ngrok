@@ -1,3 +1,4 @@
+![botimage2](https://user-images.githubusercontent.com/65948438/120762128-95133500-c533-11eb-9218-9bb70da8ad82.png)
 # isitDown-Telegram-Bot_ngrok
 simple Telegram Bot to check the status of websites as well as IP address. I have integrated python-telegram-bot API in my Python code and used ngrok that allows to expose a web server running on my local machine to the internet. Used webhooks instead of polling for data gathering.
 
